@@ -26,25 +26,25 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5635069924').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-auth_grp = environ.get('AUTH_GROUP')
+auth_channel = environ.get('AUTH_CHANNEL', '-1002090718419')
+auth_grp = environ.get('AUTH_GROUP','+q-iEwFycKSpiMmE1')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://hellobro:Su1&7@9$2?11@cluster0.gtgqxwe.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002041193148'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '+5VlT64Ld5NJhZmU1')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by [Movies Adaa™](https://t.me/+5VlT64Ld5NJhZmU1")</b>⚡\n\n🎦 <b>File Name: </b> ➥  <i>{file_caption}</i>\n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now [MoviesAdda™](https://t.me/+5VlT64Ld5NJhZmU1")</b> ↭  🔥")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<b>File uploaded by [Movies Adaa™](https://t.me/+5VlT64Ld5NJhZmU1")</b>\n\n🎦 <b>File Name: </b> ➥  <i>{file_caption}</i>\n⚙️ <b>Size: </b><i>{file_size}</i>\n\n                ❤️<b>WE LOVE YOU</b>❤️\n🔥  ↭ <b>Join Now [MoviesAdda™](https://t.me/+5VlT64Ld5NJhZmU1")</b> ↭  🔥")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Your Query: {query}</b> \n‌‌‌‌IMDb Data by: @LazyDeveloper \n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 \n\n♥️ we are nothing without you ♥️ \n\n💛 Please Share Us 💛\n\n⚠️Click on the button 👇 below to get your query privately")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Your Query: {query}</b> \n‌‌‌‌IMDb Data by: @Hellobro918 \n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 \n\n♥️ we are nothing without you ♥️ \n\n💛 Please Share Us 💛\n\n⚠️Click on the button 👇 below to get your query privately")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), False)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
@@ -56,16 +56,16 @@ PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), Fals
 
 #LazyRenamer Configs
 FLOOD = int(environ.get("FLOOD", "10"))
-LAZY_MODE = bool(environ.get("LAZY_MODE"))
+LAZY_MODE = bool(environ.get("LAZY_MODE",'True'))
 #Add user id of the user in this field those who you want to be Authentic user for file renaming features
-lazy_renamers = [int(lazrenamers) if id_pattern.search(lazrenamers) else lazrenamers for lazrenamers in environ.get('LAZY_RENAMERS', '').split()]
+lazy_renamers = [int(lazrenamers) if id_pattern.search(lazrenamers) else lazrenamers for lazrenamers in environ.get('LAZY_RENAMERS', '5635069924').split()]
 LAZY_RENAMERS = (lazy_renamers + ADMINS) if lazy_renamers else []
-REQ_CHANNEL = int(environ.get('REQ_CHANNEL'))
+REQ_CHANNEL = int(environ.get('REQ_CHANNEL','-1002126022949'))
 
 #ai
 AI = is_enabled((environ.get("AI","True")), False)
-OPENAI_API = environ.get("OPENAI_API","")
-LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
+OPENAI_API = environ.get("OPENAI_API","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")
+LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","-1002023004406")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 # Requested Content template variables ---
 ADMIN_USRNM = environ.get('ADMIN_USRNM','Hellobro918') # WITHOUT @
 MAIN_CHANNEL_USRNM = environ.get('MAIN_CHANNEL_USRNM','+dm_sqx1js1k1NmI1') # WITHOUT @
