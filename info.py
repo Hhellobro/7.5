@@ -39,7 +39,7 @@ password="Su1&7@9$2?11"
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://hellobro:Su1&7@9$2?11@cluster0.gtgqxwe.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-DATABASE_URI = DATABASE_URI.replace("://", "://{}:{}@".format(quote_plus(username), quote_plus(password)))
+DATABASE_URI = f"mongodb+srv://{quote_plus(username)}:{quote_plus(password)}@cluster0.gtgqxwe.mongodb.net/?retryWrites=true&w=majority"
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002041193148'))
