@@ -68,7 +68,7 @@ LAZY_RENAMERS = (lazy_renamers + ADMINS) if lazy_renamers else []
 REQ_CHANNEL = int(environ.get('REQ_CHANNEL','-1002126022949'))
 
 #ai
-AI = is_enabled((environ.get("AI","True")), False)
+AI = is_enabled((environ.get("AI","True")), True)
 OPENAI_API = environ.get("OPENAI_API","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")
 LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","-1002023004406")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 # Requested Content template variables ---
@@ -79,7 +79,7 @@ LAZY_YT_HANDLE = environ.get('LAZY_YT_HANDLE','gamingbroshorts5002')  # WITHOUT 
 MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "+5VlT64Ld5NJhZmU1") #[ without @ ]
 
 # Url Shortner
-URL_MODE = is_enabled((environ.get("URL_MODE","True")), False)
+URL_MODE = is_enabled((environ.get("URL_MODE","True")), True)
 URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'adrinolinks.in') #Always use website url from api section 
 URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '109bce83c4e2ecf4707d9f4abe2c539e0288c1a7')
 LZURL_PRIME_USERS = [int(lazyurlers) if id_pattern.search(lazyurlers) else lazyurlers for lazyurlers in environ.get('LZURL_PRIME_USERS', '5635069924').split()]
