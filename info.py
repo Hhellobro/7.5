@@ -1,5 +1,4 @@
 import re
-import os
 from os import environ
 
 id_pattern = re.compile(r'^.\d+$')
@@ -13,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ('API_ID', '27920615'))
-API_HASH = environ('API_HASH', 'fca37d30df0f1d0846d91308f8569a0b') 
-BOT_TOKEN = environ('BOT_TOKEN','6741315301:AAEZPQKEIAU_Tjvhwk6ZBNR79DzPf11ZJJE') 
+API_ID = int(environ.get('API_ID', '27920615'))
+API_HASH = environ.get('API_HASH', 'fca37d30df0f1d0846d91308f8569a0b') 
+BOT_TOKEN = environ.get('BOT_TOKEN','6741315301:AAEZPQKEIAU_Tjvhwk6ZBNR79DzPf11ZJJE') 
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
