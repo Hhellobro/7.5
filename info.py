@@ -72,7 +72,7 @@ AI = is_enabled((environ.get("AI","True")), True)
 OPENAI_API = environ.get("OPENAI_API","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")
 LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","-1002023004406")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 # Requested Content template variables ---
-ADMIN_USRNM = environ.get('ADMIN_USRNM','Hellobro918') # WITHOUT @
+ADMIN_USRNM = environ.get('ADMIN_USRNM','AlphaDeveloperss') # WITHOUT @
 MAIN_CHANNEL_USRNM = environ.get('MAIN_CHANNEL_USRNM','+dm_sqx1js1k1NmI1') # WITHOUT @
 DEV_CHANNEL_USRNM = environ.get('DEV_CHANNEL_USRNM','+dm_sqx1js1k1NmI1') # WITHOUT @
 LAZY_YT_HANDLE = environ.get('LAZY_YT_HANDLE','gamingbroshorts5002')  # WITHOUT @ [  add only handle - don't add full url  ] 
@@ -80,7 +80,7 @@ MOVIE_GROUP_USERNAME = environ.get('MOVIE_GROUP_USERNAME', "+5VlT64Ld5NJhZmU1") 
 
 # Url Shortner
 URL_MODE = is_enabled((environ.get("URL_MODE","True")), True)
-URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'shareus.io') #Always use website url from api section 
+URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'shrs.link/RGDtVf') #Always use website url from api section 
 URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', 'xK9cYARGJ2f4XvAuh24cR15MOPn1')
 LZURL_PRIME_USERS = [int(lazyurlers) if id_pattern.search(lazyurlers) else lazyurlers for lazyurlers in environ.get('LZURL_PRIME_USERS', '5635069924').split()]
 
