@@ -592,15 +592,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/+dm_sqx1js1k1NmI1')
-        ], [
+            ],[
+            InlineKeyboardButton('CHENNAL', url='https://t.me/+dm_sqx1js1k1NmI1'),
+            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
+            ],[
+            InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+RXJ3iFRDVUtkNmZl'),
+            InlineKeyboardButton('2nd BOT 🤖', url='@Alphaphonix_bot')
+            ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
-            InlineKeyboardButton('♥️ About ♥️', callback_data='about')
-        ],[
+            InlineKeyboardButton('♥️ ABOUT♥️', callback_data='about')
+            ],[
+            InlineKeyboardButton('⚠️JOIN OUR BACKUP CHENNAL⚠️', url='https://t.me/+BtEgw4ZWrLk2NmY1')
+	    ],[
             InlineKeyboardButton('Watch Tutorial', url='https://t.me/+dm_sqx1js1k1NmI1')
-        ]]
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -628,7 +633,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/+dm_sqx1js1k1NmI1'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
+            InlineKeyboardButton('♥️ Source', url='https://t.me/+qAGZeEs0y2U0YTVl')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
