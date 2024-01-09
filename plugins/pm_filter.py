@@ -591,7 +591,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton("➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true")
             ],[
             InlineKeyboardButton('CHENNAL', url='https://t.me/+dm_sqx1js1k1NmI1'),
             InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
