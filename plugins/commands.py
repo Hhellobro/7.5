@@ -53,7 +53,7 @@ async def start(client, message):
             InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+hF6385_c6OU0ZTg1')
             ],[
             InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+mda6zlri2PRlZDA1'),
-            InlineKeyboardButton('2nd BOT 🤖', url='https://t.me/XMoviess_bot')
+            InlineKeyboardButton('2nd BOT 🤖', url='@AlphaPhonix_bot')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
             InlineKeyboardButton('♥️How to use♥️', url='https://t.me/c/2105569125/4')
@@ -111,7 +111,7 @@ async def start(client, message):
             InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+hF6385_c6OU0ZTg1')
             ],[
             InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+mda6zlri2PRlZDA1'),
-            InlineKeyboardButton('2nd BOT 🤖', url='https://t.me/XMoviess_bot')
+            InlineKeyboardButton('2nd BOT 🤖', url='@AlphaPhonix_bot')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
             InlineKeyboardButton('♥️How to use♥️', url='https://t.me/c/2105569125/4')
