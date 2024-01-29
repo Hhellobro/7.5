@@ -50,7 +50,7 @@ async def start(client, message):
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('CHENNAL', url='https://t.me/+C6IeKn-gFr4zY2Vl'),
-            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
+            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+hF6385_c6OU0ZTg1')
             ],[
             InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+mda6zlri2PRlZDA1'),
             InlineKeyboardButton('2nd BOT 🤖', url='https://t.me/AlphaPhonix_bot')
@@ -108,7 +108,7 @@ async def start(client, message):
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('CHENNAL', url='https://t.me/+C6IeKn-gFr4zY2Vl'),
-            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
+            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+hF6385_c6OU0ZTg1')
             ],[
             InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+mda6zlri2PRlZDA1'),
             InlineKeyboardButton('2nd BOT 🤖', url='https://t.me/AlphaPhonix_bot')
