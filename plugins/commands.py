@@ -23,12 +23,12 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/+dm_sqx1js1k1NmI1')
+                InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
             ],
             [
                 InlineKeyboardButton('🙆🏻 Help 🦾', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://t.me/+dm_sqx1js1k1NmI1')
+            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
             ],
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
@@ -46,21 +46,16 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        buttons [[
+        buttons = [[
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('CHENNAL', url='https://t.me/+dm_sqx1js1k1NmI1'),
-            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
-            ],[
-            InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+RXJ3iFRDVUtkNmZl'),
-            InlineKeyboardButton('2nd BOT 🤖', url='@Alphaphonix_bot')
+            InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
-            InlineKeyboardButton('♥️ ABOUT♥️', callback_data='about')
+            InlineKeyboardButton('♥️ About ♥️', callback_data='about')
             ],[
-            InlineKeyboardButton('⚠️JOIN OUR BACKUP CHENNAL⚠️', url='https://t.me/+BtEgw4ZWrLk2NmY1')
-	    ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://t.me/+dm_sqx1js1k1NmI1')
+            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -74,7 +69,7 @@ async def start(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
-            logger.error("You have to join main Channel to excess this bot...!")
+            logger.error("Hey Sona, Ek dfa check kr lo ki main Channel mei Add hu ya nhi...!")
             return
         btn = [
             [
@@ -84,7 +79,7 @@ async def start(client, message):
             ],
              [
                 InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://www.youtube.com/@gamingbroshorts5002'
+                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
                 )
             ]
         ]
@@ -107,19 +102,14 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('CHENNAL', url='https://t.me/+dm_sqx1js1k1NmI1'),
-            InlineKeyboardButton('🔔 Group 🤖', url='https://t.me/+urUT4TWSQukxZTRl')
-            ],[
-            InlineKeyboardButton('🧞‍♀️ MORE 🧐', url='https://t.me/+RXJ3iFRDVUtkNmZl'),
-            InlineKeyboardButton('2nd BOT 🤖', url='@Alphaphonix_bot')
+            InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
             ],[
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
-            InlineKeyboardButton('♥️ ABOUT♥️', callback_data='about')
-            ],[
-            InlineKeyboardButton('⚠️JOIN OUR BACKUP CHENNAL⚠️', url='https://t.me/+BtEgw4ZWrLk2NmY1')
-	    ],[
-            InlineKeyboardButton('Watch Tutorial', url='https://t.me/+dm_sqx1js1k1NmI1')
-            ]]
+            InlineKeyboardButton('♥️ About ♥️', callback_data='about')
+        ],[
+            InlineKeyboardButton('Watch Tutorial', url='https://youtube.com/LazyDeveloper')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -232,9 +222,14 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
+            # Create the inline keyboard button with callback_data
+            button = InlineKeyboardButton('▶ Gen Stream / Download Link', callback_data=f'generate_stream_link:{file_id}')
+            # Create the inline keyboard markup with the button
+            keyboard = InlineKeyboardMarkup([[button]])
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
+                reply_markup=keyboard,
                 protect_content=True if pre == 'filep' else False,
                 )
             filetype = msg.media
@@ -264,13 +259,18 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
+
+    button = InlineKeyboardButton('▶ Gen Stream / Download Link', callback_data=f'generate_stream_link:{file_id}')
+    # Create the inline keyboard markup with the button
+    keyboard = InlineKeyboardMarkup([[button]])
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
+        reply_markup=keyboard,  # Use the created keyboard
         protect_content=True if pre == 'filep' else False,
         )
-                    
+
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
@@ -384,7 +384,7 @@ async def delete_all_index(bot, message):
 @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
 async def delete_all_index_confirm(bot, message):
     await Media.collection.drop()
-    await message.answer('♥️ Thank You Alpa Developer ♥️')
+    await message.answer('♥️ Thank You LazyDeveloper ♥️')
     await message.message.edit('Succesfully Deleted All The Indexed Files.')
 
 
@@ -587,7 +587,7 @@ async def save_template(client, message):
         else:
             await message.reply_text("I'm not connected to any groups!", quote=True)
             return
-
+ 
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         grp_id = message.chat.id
         title = message.chat.title
